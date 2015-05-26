@@ -63,8 +63,6 @@
       }
     );
 
-    window.widget = this.widget
-
     this.widget.on('save', this._onSave.bind(this));
   };
 

@@ -89,7 +89,7 @@
       this.widgetArea[0], composition.id
     );
 
-    this.widget.on('save', this._onSave.bind(this));
+    this.widget.on(Widgetic.EVENTS.COMPOSITION_SAVED, this._onSave.bind(this));
   };
 
   EditArea.prototype.toggleEditor = function(show) {
@@ -105,13 +105,11 @@
     this.el.toggleClass('edit-area--with-editor', this.showEditor)
   }
 
-  EditArea.prototype._onSave = function(ev) {
-    this.currentComposition = ev.composition;
-    if(ev.opts.fromApi) {
-      this.toggleEditor(false);
-      this.el.trigger('composition-saved', ev.composition)
-      this._showEmbedCode(ev.composition);
-    }
+  EditArea.prototype._onSave = function(composition) {
+    this.currentComposition = composition;
+    this.toggleEditor(false);
+    this.el.trigger('composition-saved', composition)
+    this._showEmbedCode(composition);
   };
 
   EditArea.prototype._onDeleteClicked = function() {

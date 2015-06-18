@@ -6,7 +6,7 @@ body {
   color: white;
   font-family: Roboto, sans-serif;
   padding: 20px;
-  background: #504356;
+  background: #292929;
 }
 
 .warning {
@@ -81,7 +81,7 @@ input, button {
 }
 
 .edit-area_pane {
-  background: rgb(81, 63, 89);
+  background: #333;
   box-shadow: 1px 1px 2px rgba(0,0,0,.5);
   width: 260px;
   margin: 20px auto;
@@ -101,7 +101,7 @@ input, button {
   background: transparent;
   color: white;
   border: none;
-  border-bottom: 2px solid rgb(39, 17, 48);
+  border-bottom: 2px solid #292929;
   margin: 5px 0;
 }
 

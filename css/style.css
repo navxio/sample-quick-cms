@@ -55,6 +55,8 @@ input, button {
 .widget-listing li,
 .composition-listing li {
   display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 
 .widget {
@@ -78,6 +80,10 @@ input, button {
   background: rgba(0,0,0, 0.5);
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.selected .widget_name {
+  background: #ec574d;
 }
 
 .widget.widget--new img {

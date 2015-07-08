@@ -13,7 +13,7 @@
 
     this.el.html('Select a widget to list the available compositions!');
   }
-  
+
   CompositionListing.EDIT = 0;
   CompositionListing.NEW  = 1;
 
@@ -45,7 +45,13 @@
   }
 
   CompositionListing.prototype._onCompositionClick = function(ev) {
-    var composition = $(ev.currentTarget).data('composition');
+    var el = $(ev.currentTarget);
+    var composition = el.data('composition');
+    
+    el.addClass('selected')
+      .siblings()
+      .removeClass('selected');
+
     if(composition) {
       this.el.trigger('composition-selected', composition, CompositionListing.EDIT);
     } else {

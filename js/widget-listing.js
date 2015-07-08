@@ -31,7 +31,12 @@
   };
 
   WidgetListing.prototype._onWidgetClick = function(ev) {
-    var widget = $(ev.currentTarget).data('widget');
+    var widgetEl = $(ev.currentTarget);
+    var widget = widgetEl.data('widget');
+    widgetEl
+      .addClass('selected')
+      .siblings()
+      .removeClass('selected');
     this.el.trigger('widget-selected', widget);
   };
 

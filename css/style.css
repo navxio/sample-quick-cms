@@ -23,7 +23,7 @@ input, button {
 }
 
 .login-area {
-  opacity: 0;
+  display: none;
 }
 
 .app > .login-area ~ * {
@@ -36,6 +36,10 @@ input, button {
 
 .app.init > .login-area ~ * {
   opacity: 0;
+}
+
+.app.loggedIn > p {
+  display: none;
 }
 
 .widget-listing,

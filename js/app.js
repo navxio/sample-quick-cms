@@ -16,16 +16,24 @@
 
   App.prototype._onLoginSuccess = function() {
     this.el.removeClass('init')
+    this.el.addClass('loggedIn')
     this.widgetListing.load();
   };
 
   App.prototype._onWidgetSelected = function(ev, widget) {
     this.compositionListing.load(widget);
-    this.editArea.new(widget);
   };
 
-  App.prototype._onCompositionSelected = function(ev, composition) {
-    this.editArea.edit(composition);
+  App.prototype._onCompositionSelected = function(ev, composition, type) {
+    switch (type) {
+      case CompositionListing.EDIT:
+        this.editArea.edit(composition);
+        break;
+      default:
+      case CompositionListing.NEW:
+        this.editArea.new(composition);
+        break;
+    }
   };
 
   App.prototype._refresh = function() {

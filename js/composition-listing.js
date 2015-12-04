@@ -53,9 +53,9 @@
       .removeClass('selected');
 
     if(composition) {
-      this.el.trigger('composition-selected', composition, CompositionListing.EDIT);
+      this.el.trigger('composition-selected', { composition: composition, type: CompositionListing.EDIT });
     } else {
-      this.el.trigger('composition-selected', $(ev.currentTarget).data('widget'), CompositionListing.NEW);
+      this.el.trigger('composition-selected', { widget: $(ev.currentTarget).data('widget'), type: CompositionListing.NEW });
     }
   };
 

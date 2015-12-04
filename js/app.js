@@ -24,14 +24,17 @@
     this.compositionListing.load(widget);
   };
 
-  App.prototype._onCompositionSelected = function(ev, composition, type) {
+  App.prototype._onCompositionSelected = function(ev, data) {
+    var composition = data.composition
+    var widget = data.widget
+    var type = data.type
     switch (type) {
       case CompositionListing.EDIT:
         this.editArea.edit(composition);
         break;
       default:
       case CompositionListing.NEW:
-        this.editArea.new(composition);
+        this.editArea.new(widget);
         break;
     }
   };

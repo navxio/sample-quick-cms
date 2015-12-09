@@ -22,6 +22,7 @@
 
   App.prototype._onWidgetSelected = function(ev, widget) {
     this.compositionListing.load(widget);
+    this.editArea.setWidget(widget);
   };
 
   App.prototype._onCompositionSelected = function(ev, data) {

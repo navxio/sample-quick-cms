@@ -68,6 +68,7 @@
 
   EditArea.prototype.edit = function(composition) {
     this.currentComposition = composition;
+    this.el.removeClass('init')
 
     this.toggleEditor(false);
 
@@ -91,6 +92,10 @@
 
     this.widget.on(Widgetic.EVENTS.COMPOSITION_SAVED, this._onSave.bind(this));
   };
+
+  EditArea.prototype.setWidget = function(widget) {
+    this.currentWidget = widget
+  }
 
   EditArea.prototype.toggleEditor = function(show) {
     this.showEditor = !this.showEditor
